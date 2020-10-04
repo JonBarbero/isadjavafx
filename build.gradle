@@ -19,12 +19,12 @@ version = '0.0.1'
 group = 'ehu.isad'
 
 // ext.moduleName = 'gradlejavafxhelloworld'
-mainClassName = "$moduleName/ehu.isad.App"
+mainClassName = "$moduleName/ehu.isad.ComboBoxExperiments"
 
 
 javafx {
     version = "12"
-    modules = [ ]
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.swing', 'javafx.web']
 }
 
 
@@ -33,6 +33,11 @@ repositories {
 }
 
 def newArgs = [ '--add-exports','java.desktop/com.apple.eawt=ALL-UNNAMED',]
+
+dependencies {
+    implementation 'junit:junit:4.12'
+    implementation 'com.google.code.gson:gson:2.8.6'
+}
 
 run {
     inputs.property('moduleName', moduleName)
